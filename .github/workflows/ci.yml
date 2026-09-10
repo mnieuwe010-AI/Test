@@ -20,5 +20,5 @@ jobs:
       - name: Typecheck / build
         run: npm run build
 
-      - name: Unit tests (offline: sanitatie, alias-resolver, padopbouw)
+      - name: "Unit tests (offline: sanitatie, alias-resolver, padopbouw)"
         run: npm test
