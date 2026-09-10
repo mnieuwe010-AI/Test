@@ -26,7 +26,9 @@ export function sanitizeForFilesystem(raw: string): string {
     s = s.slice(0, MAX_LEN).trim();
   }
 
-  if (s.length === 0) {
+  // Een string die alleen uit koppeltekens/spaties bestond (bv. "///") is na
+  // het opschonen nog steeds geen bruikbare naam, ook al is s.length > 0.
+  if (s.replace(/[-\s]/g, "").length === 0) {
     return "ONBEKEND";
   }
 
